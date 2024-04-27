@@ -13,4 +13,4 @@ for arg in args:
     for i in range(10):
         os.system("python scMFGNN.py --name {} --n_clusters {}".format(arg, dic[arg]))
 
-os.system("python /home/derek/ycm/scGAC-main/loop.py")
+os.system("python /home/derek/ycm/scMFGNN-main/loop.py")
