@@ -25,7 +25,9 @@ from evaluation import eva
 from preprocess import read_dataset, normalize
 from layers import ZINBLoss, MeanAct, DispAct
 from GNN import GNNLayer
-
+import utilsForMain
+import pandas as pd
+import scipy as sp
 
 class AE(nn.Module):
     def __init__(self, n_enc_1, n_enc_2, n_enc_3, n_dec_1, n_dec_2, n_dec_3,
@@ -385,52 +387,13 @@ def train_mfgnn(dataset, X_raw, sf, name, method, k):
     iters10_kmeans_iter_P.append(round(kmeans_max,5))
     iters10_NMI_iter_P.append(round(nmi_max,5))
     iters10_ARI_iter_P.append(round(ari_max,5))
-    # iters10_F1_iter_P.append(round(F1_max,5))
-
-
-
-
-
-    # sht.range('A{}'.format(row)).value = [ld1, ld2, ld3, ld4,
-    #                                       '{}'.format(np.mean(iters10_kmeans_iter_Z), 5),
-    #
-    #                                       '{}'.format(round(np.mean(iters10_NMI_iter_Z), 5)),
-    #
-    #                                       '{}'.format(round(np.mean(iters10_ARI_iter_Z), 5))
-    #                                       ]
-    # row += 1
-    # print("#####################################", file=file_out)
-    # print("kmeans Z mean", round(np.mean(iters10_kmeans_iter_Z), 5), "max", np.max(iters10_kmeans_iter_Z),
-    #       "\n", iters10_kmeans_iter_Z, file=file_out)
-    # print("NMI mean", round(np.mean(iters10_NMI_iter_Z), 5), "max", np.max(iters10_NMI_iter_Z), "\n",
-    #       iters10_NMI_iter_Z, file=file_out)
-    # print("ARI mean", round(np.mean(iters10_ARI_iter_Z), 5), "max", np.max(iters10_ARI_iter_Z), "\n",
-    #       iters10_ARI_iter_Z, file=file_out)
-    # print("F1  mean", round(np.mean(iters10_F1_iter_Z), 5), "max", np.max(iters10_F1_iter_Z), "\n",
-    #       iters10_F1_iter_Z, file=file_out)
-    # print('ld1 , ld2 ,ld3 , ld4, acc, nmi, ari, f1: \t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}'.format(
-    #     ld1, ld2, ld3, ld4,
-    #     round(np.mean(iters10_kmeans_iter_Z), 5), round(np.mean(iters10_NMI_iter_Z), 5),
-    #     round(np.mean(iters10_ARI_iter_Z), 5), round(np.mean(iters10_F1_iter_Z), 5)), file=file_out)
-    # print('{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}'.format(
-    #     ld1, ld2,
-    #     round(np.mean(iters10_kmeans_iter_Z), 5), round(np.mean(iters10_NMI_iter_Z), 5),
-    #     round(np.mean(iters10_ARI_iter_Z), 5), round(np.mean(iters10_F1_iter_Z), 5)), file=file_out)
     print('{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}\t{:.4f}'.format(
         ld1,
         ld2,
         ld3,
         round(np.mean(iters10_kmeans_iter_Z), 5), round(np.mean(iters10_NMI_iter_Z), 5),
         round(np.mean(iters10_ARI_iter_Z), 5)), file=file_out)
-    # wb.save('{}.xlsx'.format(dataset))
-
     file_out.close()
-
-#################################################################################
-import utilsForMain
-import pandas as pd
-import scipy as sp
-
 
 def read_clean(data):
     assert isinstance(data, np.ndarray)
