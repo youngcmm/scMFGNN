@@ -1,5 +1,5 @@
 # scMFGNN
-we proposed scMFGNN, a single-cell clustering model based on a deep graph embedding method, has been proposed, which dynamically fuses representation of scRNA-seq data from different multi-scale layers, and adaptively concatenate topological structural information and node attribute information in the same layer. Moreover, scMFGNN employs a ZINB-based autoencoder to overcome high-dispersion issues in clustering scRNA-seq data. The scMFGNN outperforms state-of-the-art scRNA-seq data clustering methods in terms of clustering accuracy on nine datasets. It is able to obtain the code for our work at https://github.com/youngcmm/scMFGNN.
+we proposed scMFGNN, a single-cell clustering model based on a deep graph embedding method, which dynamically fuses representation of scRNA-seq data from different multi-scale layers, and adaptively concatenate topological structural information and node attribute information in the same layer. Moreover, scMFGNN employs a ZINB-based autoencoder to overcome high-dispersion issues in clustering scRNA-seq data. The scMFGNN outperforms state-of-the-art scRNA-seq data clustering methods in terms of clustering accuracy on nine datasets. It is able to obtain the code for our work at https://github.com/youngcmm/scMFGNN.
 
 ![img.png](img.png)
 
